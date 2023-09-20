@@ -1,8 +1,8 @@
 import MyFirstHostClass, { MyFirstHostClassType } from "./src/hosts/MyFirstHostClass";
 import MySecondHostClass, { MySecondHostClassType } from "./src/hosts/MySecondHostClass";
-import { PluginImpl1 } from "./src/plugins/Plugin1";
-import { PluginImpl2 } from "./src/plugins/Plugin2";
-import { PluginImpl3 } from "./src/plugins/Plugin3";
+import { PluginImpl1 } from "./src/plugins/PluginImpl1";
+import { PluginImpl2 } from "./src/plugins/PluginImpl2";
+import { PluginImpl3 } from "./src/plugins/PluginImpl3";
 import { HostClass } from "./src/typedefs";
 
 

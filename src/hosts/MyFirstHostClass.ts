@@ -1,12 +1,8 @@
-import { HostClass, Plugin1, Plugin2 } from "../typedefs";
-import { BaseHostClass } from "./BaseHostClass";
+import { PluginImpl1 } from "../plugins/PluginImpl1";
+import { PluginImpl2 } from "../plugins/PluginImpl2";
+import { BasePluginHostClass } from "./BasePluginHostClass";
 
-export default class MyFirstHostClass<P extends [Plugin1, Plugin2]> extends BaseHostClass<P> {
-  constructor(plugins: P) {
-    super(plugins);
-    this._plugins.forEach(p => p.init(this));
-  }
-
+export default class MyFirstHostClass<P extends [PluginImpl1, PluginImpl2]> extends BasePluginHostClass<P> {
   get plugin1() {
     return this._plugins[0];
   }

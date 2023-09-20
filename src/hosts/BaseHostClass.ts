@@ -1,6 +1,6 @@
-import { BasePlugin, HostClass } from "../typedefs";
+import { HostClass, Plugin } from "../typedefs";
 
-export abstract class BaseHostClass<P extends (BasePlugin)[]> implements HostClass {
+export abstract class BaseHostClass<P extends (Plugin)[]> implements HostClass {
   protected _plugins: P;
 
   constructor(plugins: P) {
