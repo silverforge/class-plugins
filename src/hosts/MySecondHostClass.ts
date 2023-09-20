@@ -3,19 +3,21 @@ import { BaseHostClass } from "./BaseHostClass";
 
 export type MySecondHostClassType = MySecondHostClass<[Plugin1, Plugin2, Plugin3]>;
 
-export default class MySecondHostClass<P extends [Plugin1, Plugin2, Plugin3]> extends BaseHostClass<P> implements HostClass {
+export default class MySecondHostClass<P extends [Plugin1, Plugin2, Plugin3]> extends BaseHostClass<P> {
+  constructor(plugins: P) {
+    super(plugins);
+    this._plugins.forEach(p => p.init(this));
+  }
+
   get plugin1() {
-    this._plugins[0].init(this);
     return this._plugins[0];
   }
 
   get plugin2() {
-    this._plugins[1].init(this);
     return this._plugins[1];
   }
 
   get plugin3() {
-    this._plugins[2].init(this);
     return this._plugins[2];
   }
 
