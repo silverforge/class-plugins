@@ -1,8 +1,6 @@
 import { HostClass, Plugin1, Plugin2, Plugin3 } from "../typedefs";
 import { BaseHostClass } from "./BaseHostClass";
 
-export type MySecondHostClassType = MySecondHostClass<[Plugin1, Plugin2, Plugin3]>;
-
 export default class MySecondHostClass<P extends [Plugin1, Plugin2, Plugin3]> extends BaseHostClass<P> {
   constructor(plugins: P) {
     super(plugins);
