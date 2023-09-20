@@ -1,14 +1,9 @@
 import { HostClass, Plugin1, Plugin2 } from "../typedefs";
+import { BaseHostClass } from "./BaseHostClass";
 
 export type MyFirstHostClassType = MyFirstHostClass<[Plugin1, Plugin2]>;
 
-export default class MyFirstHostClass<P extends [Plugin1, Plugin2]> implements HostClass {
-  private _plugins: P;
-
-  constructor(plugins: P) {
-    this._plugins = plugins;
-  }
-
+export default class MyFirstHostClass<P extends [Plugin1, Plugin2]> extends BaseHostClass<P> implements HostClass {
   get plugin1() {
     this._plugins[0].init(this);
     return this._plugins[0];
